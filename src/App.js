@@ -59,18 +59,20 @@ const App = () => {
         <button className="search-button" type="submit">search</button>
       </form>
       
-      
-      {recipes.map(recipe =>(
-        //Se usa una prop para poder acceder a los objetos que nos trae la API accediendo a Recipe => Recipe y despues al objeto children
-        //Se accede por el state que tenemos en useEffect
-        <Recipe
-          key={recipe.recipe.label}  
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories} 
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-      ))}
+      	
+		<div className="row">
+			{recipes.map(recipe =>(
+				//Se usa una prop para poder acceder a los objetos que nos trae la API accediendo a Recipe => Recipe y despues al objeto children
+				//Se accede por el state que tenemos en useEffect
+				<Recipe
+				key={recipe.recipe.label}  
+				title={recipe.recipe.label}
+				calories={recipe.recipe.calories} 
+				image={recipe.recipe.image}
+				ingredients={recipe.recipe.ingredients}
+				/>
+			))}
+		</div>
     </div>
   )
 }
